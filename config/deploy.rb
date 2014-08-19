@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'bootstrap_test'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@github.com:RolandStilting/bootstrap_test'
 
 set :deploy_to, '/home/deploy/bootstrap_test'
 
@@ -45,13 +45,11 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
-  after :publishing, :restart
-
   after :publishing, 'deploy:restart'
-  after :finishihng, 'deploy:cleanup'
+  after :finishing, 'deploy:cleanup'
 
 end
