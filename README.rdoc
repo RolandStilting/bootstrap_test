@@ -5,6 +5,11 @@ application up and running.
 
 Things you may want to cover:
 
+Install the following software :
+
+JDA WMS 9.1
+Oracle 923
+
 * Ruby version
 
 * System dependencies
